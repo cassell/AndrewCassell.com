@@ -1,0 +1,69 @@
+{
+    "_readme": [
+        "This file locks the dependencies of your project to a known state",
+        "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file"
+    ],
+    "hash": "3666b469b7a578c54749485d83d1dbd5",
+    "packages": [
+        {
+            "name": "frameworks/bootstrap",
+            "version": "3.0.3",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/frameworks/bootstrap.git",
+                "reference": "6c0d3eda6a875a8277a331662b6927dd28519b81"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/frameworks/bootstrap/zipball/6c0d3eda6a875a8277a331662b6927dd28519b81",
+                "reference": "6c0d3eda6a875a8277a331662b6927dd28519b81",
+                "shasum": ""
+            },
+            "require": {
+                "frameworks/jquery": "*"
+            },
+            "type": "library",
+            "notification-url": "https://packagist.org/downloads/",
+            "time": "2013-12-17 08:10:07"
+        },
+        {
+            "name": "frameworks/jquery",
+            "version": "2.0.3",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/frameworks/jquery.git",
+                "reference": "51490c2370aee4a126e7627dea3ef1c6d3354e6a"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/frameworks/jquery/zipball/51490c2370aee4a126e7627dea3ef1c6d3354e6a",
+                "reference": "51490c2370aee4a126e7627dea3ef1c6d3354e6a",
+                "shasum": ""
+            },
+            "type": "library",
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "description": "jQuery JavaScript Library",
+            "homepage": "http://jquery.com",
+            "time": "2013-07-10 19:39:27"
+        }
+    ],
+    "packages-dev": [
+
+    ],
+    "aliases": [
+
+    ],
+    "minimum-stability": "stable",
+    "stability-flags": [
+
+    ],
+    "platform": [
+
+    ],
+    "platform-dev": [
+
+    ]
+}

@@ -1,0 +1,14 @@
+{
+    "name": "andrewcassell/andrewcassell",
+    "type": "website",
+    "authors": [
+		{
+            "name": "Andrew Cassell",
+            "email": "me@andrewcassell.com"
+        }
+    ],
+    "require": {
+		"frameworks/bootstrap": "3.0.3"
+    }
+	
+}
