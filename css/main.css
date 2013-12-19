@@ -1,0 +1,34 @@
+
+@font-face {
+    font-family: 'josefin_sansregular';
+    src: url('/fonts/josefin-sans/josefin-sans-webfont.eot');
+    src: url('/fonts/josefin-sans/josefin-sans-webfont.eot?#iefix') format('embedded-opentype'),
+         url('/fonts/josefin-sans/josefin-sans-webfont.woff') format('woff'),
+         url('/fonts/josefin-sans/josefin-sans-webfont.ttf') format('truetype'),
+         url('/fonts/josefin-sans/josefin-sans-webfont.svg#josefin_sansregular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+body
+{
+	background: #F0F5F3;
+	border-top: 2px solid #AAB4B0;
+	padding-top: 10px;
+	padding: 0;
+	margin: 0;
+	font-size: 1em;
+	font-family: 'josefin_sansregular', 'Helvetica', 'Lucida Grande', 'Lucida Sans Unicode', Arial, Verdana, sans-serif;
+
+}
+
+/*
+.highlight-photo-portland
+{
+	background-image: url('/img/cassell_oregon_coast.jpg');
+	background-size: 100%;
+	display: block;
+	width: 100%;
+	height: 600px;
+	background-position: 50% 50%;
+}*/
