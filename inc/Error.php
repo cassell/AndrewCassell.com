@@ -3,15 +3,20 @@
 class Error
 {
     // Capture Errors
-    public static function captureError($number, $message, $file, $line )
-    {
-		throw new Exception(serialize($number, $message, $file, $line));
-    }
+//    public static function captureError($number, $message, $file, $line )
+//    {
+//		echo '<pre>ccc';
+//		print_r($exception);
+//		echo '</pre>';
+//		exit;
+//		
+////		throw new Exception(print_r(array($number, $message, $file, $line),true));
+//    }
     
     // Exceptions
     public static function captureException($exception)
     {
-		echo '<pre>';
+		echo '<pre>ccc';
 		print_r($exception);
 		echo '</pre>';
 		exit;

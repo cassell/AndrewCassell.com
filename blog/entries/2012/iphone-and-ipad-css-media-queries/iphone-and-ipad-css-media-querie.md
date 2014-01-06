@@ -1,0 +1,7 @@
+# iPhone and iPad Media Queries
+
+Here are the iPhone and iPad media queries for using different CSS files depending on which device connects.
+
+<div style="font-size:10px;">
+<script src="https://gist.github.com/1622270.js"> </script>
+</div>

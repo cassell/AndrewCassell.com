@@ -11,9 +11,12 @@ define('PRODUCTION_RELEASE_NUMBER','');
 require_once('Error.php');
 
 error_reporting(E_ALL);
-set_error_handler( array( 'Error', 'captureError' ) );
+//set_error_handler( array( 'Error', 'captureError' ) );
 set_exception_handler( array( 'Error', 'captureException' ) );
 
+define("LIB",  dirname(__DIR__) . "/lib/");
+
+require_once LIB.'vendor/autoload.php';
 
 require_once 'page/HtmlPage.php';
 require_once 'page/AndrewCassellPage.php';

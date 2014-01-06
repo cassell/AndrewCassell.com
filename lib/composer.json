@@ -8,7 +8,8 @@
         }
     ],
     "require": {
-		"frameworks/bootstrap": "3.0.3"
+		"frameworks/bootstrap": "3.0.3",
+		"dflydev/markdown": "v1.0.3"
     }
 	
 }
