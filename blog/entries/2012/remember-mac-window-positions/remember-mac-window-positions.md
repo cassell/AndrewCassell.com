@@ -1,7 +1,7 @@
 # Mac Window Positioner
 
 I use a Mac and switch monitor configurations multiple times a day (I'm either using just my laptop display, or using my huge monitor + laptop display). 
-I typically use a couple of different window configurations (Safari, Vim, Eclipse, Xcode, Terminal, etc.) but it's different depending on
+I typically use a couple of different window configurations (Safari, Vim, Eclipse, XCode, Terminal, etc.) but it's different depending on
 whether my laptop is connected to my external monitor.
  
 So I wrote a couple of Apple Scripts that automatically position my windows on my screen based on the coordinates provided. Here's an example of it running as a published app
@@ -14,3 +14,5 @@ on my laptop. I just go down to my dock and click on the app and presto my windo
 </video>
 
 I've put a couple of examples on GitHub: [https://github.com/cassell/Mac-Window-Posititioner](https://github.com/cassell/Mac-Window-Posititioner)
+
+*Jan 19, 2012*

@@ -6,7 +6,7 @@ body
 	padding-top: 10px;
 	padding: 0;
 	margin: 0;
-	font-size: 1em;
+	font-size: 2em;
 	font-family: 'Courier New', 'Courier';
 }
 
@@ -25,15 +25,13 @@ body
 #menu #menu-list
 {
 	list-style: none;
-	font-size: 2em;
+	font-size: 1em;
 	margin: 0;
 	padding: 10px 0 0 0;
 }
 
 #menu #menu-list li
 {
-/*	margin: 0;
-	padding: 0;*/
 	display: block;
 }
 
@@ -43,7 +41,7 @@ body
 	padding: 20px;
 	font-size: 2em;
 	margin-top: 40px;
-	border-top: 5px solid #C8CFCC;
+	border-top: 5px solid #AAB4B0;
 }
 
 .blog-container p
@@ -55,6 +53,17 @@ body
 {
 	margin-top: 0px;
 	margin-bottom: 20px;
+}
+
+.full-screen-background
+{
+	background-repeat: no-repeat;
+	background-position: center center;
+	position:relative;
+	width:100%;
+	height:100%;
+	overflow:hidden;
+	background-size:cover;
 }
 
 #me-photo img

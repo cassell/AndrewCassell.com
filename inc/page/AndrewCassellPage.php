@@ -6,7 +6,6 @@ class AndrewCassellPage extends HtmlPage
 	{
 		$this->insertStyleSheet('/lib/vendor/frameworks/bootstrap/css/bootstrap.css');
 		$this->insertStyleSheet('/css/main.css');
-		$this->setHtmlTitle('Andrew Cassell - Web Application Developer - Herndon, Virginia');
 		$this->printHtmlHeader();
 		?>
 		<div id="menu">
@@ -27,6 +26,11 @@ class AndrewCassellPage extends HtmlPage
 	function close()
 	{
 		$this->printHtmlFooter();
+	}
+	
+	function setHtmlTitle($val)
+	{
+		parent::setHtmlTitle("Andrew Cassell - " . $val);
 	}
 	
 	function printAnalytics()

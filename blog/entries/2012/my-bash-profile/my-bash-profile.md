@@ -1,7 +1,7 @@
 # Helpful Bash Profile Snippets
 
-Here a coupe of snippets of helpful things I have in my bash profile:
+Here a couple of snippets of helpful things I have in my bash profile:
 
-<div style="font-size:10px;">
-<script src="https://gist.github.com/1903447.js"> </script>
-</div>
+<script src="https://gist.github.com/8290907.js"> </script>
+
+*June 6, 2012*
