@@ -8,13 +8,12 @@ header('Expires:Tue, 9 Aug 2000 11:00:00 GMT');
 
 define('PRODUCTION_RELEASE_NUMBER','');
 
-define("INC",  __DIR__);
-define("LIB",  dirname(INC) . "/lib/");
+define("INC",  __DIR__ . '/');
 
-require_once 'page/HtmlPage.php';
-require_once 'page/AndrewCassellPage.php';
+require_once INC.'page/HtmlPage.php';
+require_once INC.'page/AndrewCassellPage.php';
 
 error_reporting(E_ALL);
 
-require_once LIB.'vendor/autoload.php';
+require_once INC.'vendor/autoload.php';
 

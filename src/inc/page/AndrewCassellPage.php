@@ -4,7 +4,7 @@ class AndrewCassellPage extends HtmlPage
 {
 	function open()
 	{
-		$this->insertStyleSheet('/lib/vendor/frameworks/bootstrap/css/bootstrap.css');
+		$this->insertStyleSheet('/inc/vendor/frameworks/bootstrap/css/bootstrap.css');
 		$this->insertStyleSheet('/css/main.css');
 		$this->printHtmlHeader();
 		?>
