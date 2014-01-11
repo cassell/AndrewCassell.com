@@ -1,21 +1,28 @@
 <?php
 
-require_once '../inc/config.php';
+header("This: is bad");
 
-$blogContents = "";
-
-if(strpos($_SERVER['REQUEST_URI'], "."))
+if(strpos(filter_input(INPUT_SERVER, 'REQUEST_URI'), "entries") !== false && file_exists( dirname(__DIR__) . filter_input(INPUT_SERVER, 'REQUEST_URI')))
+{
+	echo file_get_contents( dirname(__DIR__) . filter_input(INPUT_SERVER, 'REQUEST_URI'));
+	exit;
+}
+else if(strpos(filter_input(INPUT_SERVER, 'REQUEST_URI'), ".") !== false)
 {
 	header("Location: /error.php");
 	exit;
 }
 
+require_once '../inc/config.php';
+
+$blogContents = "";
+
 $page = new AndrewCassellPage();
 
 
-if($_SERVER['REQUEST_URI'] != "" && $_SERVER['REQUEST_URI'] != "/blog/")
+if(filter_input(INPUT_SERVER, 'REQUEST_URI') != "" && filter_input(INPUT_SERVER, 'REQUEST_URI') != "/blog/")
 {
-	$folderName = __DIR__ . '/entries/'.substr($_SERVER['REQUEST_URI'], 5);
+	$folderName = __DIR__ . '/entries/'.substr(filter_input(INPUT_SERVER, 'REQUEST_URI'), 5);
 	
 	if(file_exists($folderName . basename($folderName) . '.md'))
 	{
