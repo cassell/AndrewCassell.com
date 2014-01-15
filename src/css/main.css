@@ -55,6 +55,11 @@ body
 	margin-bottom: 20px;
 }
 
+.blog-container img
+{
+	max-width: 100%;
+}
+
 .full-screen-background
 {
 	background-repeat: no-repeat;
@@ -91,106 +96,23 @@ body
 	{
 		float: right;
 	}
-}
-
-/*
-.menu
-{
-	padding: 15px 0;
-	text-align: center;
-	background: #AAB4B0;
-}
-
-.menu .me-photo
-{
-	text-align: center;
-}
-
-.menu .name
-{
-	font-size: 3em;
-	color: #eee;
-}
-
-.menu .title
-{
-	padding: 0 0 .6em 0;
-	font-size: 2em;
-}
-
-.menu .me-photo img
-{
-	display: inline-block;
-	width: 160px;
-	height: 160px;
-	 border-radius: 100%;
-	-o-border-radius: 100%;
-	-webkit-border-radius: 100%;
-	-moz-border-radius: 100%;
-	opacity: .95;
-	border: 1px solid #5B6E7A;
-}
-
-.menu .menu-list
-{
-	list-style: none;
-	text-align: center;
-	padding: 0;
-	margin: 0;
-	padding-top: .9em;
-	font-size: 2em;
-}
-
-.menu .menu-list li
-{
-	padding: 0;
-	margin: 0;
-	display: block;
-}
-
-.menu .menu-list li a
-{
-	padding: .2em 0;
-	display: block;
-}
-
-.menu .menu-list li:first-child a
-{
-	padding: 0 0 .2em 0;
+	
 }
 
 @media (min-width: 900px)
 {
-	.menu .name
+	.blog-container a.splash-photo img
 	{
-		font-size: 5em;
+		max-width: none;
+		width: 760px;
+		margin-left: -40px;
 	}
+}
 
-	.menu .title
-	{
-		font-size: 3em;
-		padding: .1em 0 .5em 0;
-	}
-
-	.menu .menu-list
-	{
-		font-size: 2.2em;
-	}
-
-	.menu .me-photo img
-	{
-		width: 220px;
-		height: 220px;
-	}
-}*/
-
-/*
-.highlight-photo-portland
+@media (min-width: 992px)
 {
-	background-image: url('/img/cassell_oregon_coast.jpg');
-	background-size: 100%;
-	display: block;
-	width: 100%;
-	height: 600px;
-	background-position: 50% 50%;
-}*/
+	.blog-container a.splash-photo img
+	{
+		width: 980px;
+	}
+}
