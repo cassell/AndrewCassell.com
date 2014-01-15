@@ -1,6 +1,6 @@
 # The Best Damn Smoked Ribs and Pulled Pork
 
-This simple recipe and guide will teach you how to make exceptional [Kansas City-style](https://en.wikipedia.org/wiki/Kansas_City-style_barbecue) smoked baby back ribs and pulled pork that are better than all but the top echelon of BBQ restaurants. For an example of BBQ this won't beat go to [Oklahoma Joe's in Kansas City, Kansas](http://oklahomajoesbbq.com/). We'll be making 2 full racks of ribs and an 9 pound pork shoulder. This will be enough to serve 6-8 very hungry adults, with everybody getting a few ribs and plenty of pulled pork. This is about max capacity on Weber Smokey Mountain smoker without using a [rack system for the ribs](http://store.weber.com/accessories/category/cook/cookware/1280).
+This simple recipe and guide will teach you how to make exceptional [Kansas City-style](https://en.wikipedia.org/wiki/Kansas_City-style_barbecue) smoked baby back ribs and pulled pork that are better than all but the top echelon of BBQ restaurants. For an example of BBQ this won't beat go to [Oklahoma Joe's in Kansas City, Kansas](http://oklahomajoesbbq.com/). We'll be making 2 full racks of ribs and an 9 pound pork shoulder. This will be enough to serve 6-8 very hungry adults, with everybody getting a few ribs and plenty of pulled pork. This is about max capacity on my Weber Smokey Mountain smoker without using a [rack system for the ribs](http://store.weber.com/accessories/category/cook/cookware/1280).
 
 <blockquote>Note: I've <a href="https://en.wikipedia.org/wiki/Iterative_and_incremental_development">iterated</a> several times on this recipe and will continue to make updates if I am able to improve it.</blockquote>
 
@@ -16,18 +16,64 @@ For the pork shoulder I typically buy an 8 or 9 pound bone in pork shoulder (als
 
 <br>
 ## The night before smoking:
+We're going to prep our meat, rub our meat, and put it back in the refrigerator so the rub has some time to setup and stick to the meat.
 
-To prepare the ribs just remove them from the packaging and rinse them off. Then we have to remove the "[silver skin](https://en.wikipedia.org/wiki/Fascia)" (or Fascia) from the inside of the rib cages. Removing the silver skin helps the rub reach all the parts of the meat on the ribs and eliminates the stringy-ness of ribs.
+<a class="splash-photo" target="_BLANK" href="/files/blog/entries/2014/smoking-ribs-and-pulled-pork/rub_bottles.jpg">![Rub mix still in the bottles](/files/blog/entries/2014/smoking-ribs-and-pulled-pork/rub_bottles.jpg)</a>
+
+
+### Let's make our rub
+Just mix the following 6 ingredients in a bowl with a fork:
+<ul>
+	<li>2 tbsp of kosher salt</li>
+	<li>2 tbsp of garlic powder</li>
+	<li>2 tbsp of ground black pepper</li>
+	<li>2 tbsp of ground cumin</li>
+	<li>2 tbsp of chili powder</li>
+	<li>4 tbsp of brown sugar</li>
+</ul>
+
+<a class="splash-photo" target="_BLANK" href="/files/blog/entries/2014/smoking-ribs-and-pulled-pork/unmixed_spices.jpg">![Rub mix](/files/blog/entries/2014/smoking-ribs-and-pulled-pork/unmixed_spices.jpg)</a>
+
+<blockquote>Note: I've tried to reduce the rub to the simplest list of ingredients I could make and still have it be freaking delicious. I've tried adding mustard, honey, maple syrup, whiskey and other things to the rub.</blockquote>
+
+
+### Prepare the Baby Back Ribs
+To prepare the ribs just remove them from the packaging and rinse them off. Place them on a cookie sheet. I cover the cookie sheet in aluminum foil to ease cleanup (and I have a lot of old rusty cookie sheets). Then we have to remove the "[silver skin](https://en.wikipedia.org/wiki/Fascia)" (or Fascia) from the inside of the rib cages. Removing the silver skin helps the rub reach all the parts of the meat on the ribs and eliminates the stringy-ness of ribs.
 <blockquote>Plenty of chefs will tell you leave the silver skin on the ribs to help the hold together. They are wrong. You want ribs so tender they fall apart, then pull the darn silver skin off!</blockquote>
 Use a paper towel to grip the silver skin with your hand and pull it off. I've never have had to slip a knife under the skin to get it to peel, but you might have different results. It should take you about 5 minutes to prep to racks of ribs.
 
 <a class="splash-photo" target="_BLANK" href="/files/blog/entries/2014/smoking-ribs-and-pulled-pork/removing_silver_skin.jpg">![Removing the silver skin with a paper towel](/files/blog/entries/2014/smoking-ribs-and-pulled-pork/removing_silver_skin.jpg)</a>
 
 Here is a video demonstration (from [BarbequeTricks.com](http://barbecuetricks.com/)) of removing the silver skin:
-<iframe width="560" height="315" src="//www.youtube.com/embed/I-RL_f8qdJE" frameborder="0" allowfullscreen></iframe>
+<iframe style="max-width: 100%" width="560" height="315" src="//www.youtube.com/embed/I-RL_f8qdJE" frameborder="0" allowfullscreen></iframe>
 
-<br><br>
+<br>
+Spread the rub all over both sides of the ribs. Place the ribs on a cookie sheet. Cover the ribs in aluminum foil or syran wrap. Place them back in the refrigerator overnight.
 
-<a class="splash-photo" target="_BLANK" href="/files/blog/entries/2014/smoking-ribs-and-pulled-pork/rub_bottles.jpg">![Rub mix](/files/blog/entries/2014/smoking-ribs-and-pulled-pork/rub_bottles.jpg)</a>
+
+
+### Prepare the Boston Butt
+To prepare the boston butt I removed it from the packaging and rinsed the roast. I then trimmed a lot of the fat an separated the roast into two 4 pound roasts. This will cut our cooking time in half. Make sure to remove any "flappy" pieces that might cause the rub to get stuck inside and not be able to form a crispy edge.
+
+<a class="splash-photo" target="_BLANK" href="/files/blog/entries/2014/smoking-ribs-and-pulled-pork/boston_butt_prepared.jpg">![Boston butt prepared](/files/blog/entries/2014/smoking-ribs-and-pulled-pork/boston_butt_prepared.jpg)</a>
+
+Spread the rub all over every side of the roasts. Place the roasts on a cookie sheet. Cover the roasts in aluminum foil or syran wrap. Place them back in the refrigerator overnight.
+
+<a class="splash-photo" target="_BLANK" href="/files/blog/entries/2014/smoking-ribs-and-pulled-pork/boston_butt_rubbed.jpg">![Boston butt rubbed](/files/blog/entries/2014/smoking-ribs-and-pulled-pork/boston_butt_rubbed.jpg)</a>
+
+<br>
+## A few hours before smoking:
+
+### Soak the wood
+For this recipe we'll be using a mix of cherry wood and pecan wood chips. The cherry is going to add a nice sweet smoke to the meat, while the pecan will add a more complex flavor.
+
+<a class="splash-photo" target="_BLANK" href="/files/blog/entries/2014/smoking-ribs-and-pulled-pork/wood_chips.jpg">![Wood chips](/files/blog/entries/2014/smoking-ribs-and-pulled-pork/wood_chips.jpg)</a>
+
+Pour the woodchips into a container, mix them up, and pour water into the container until it covers all of the wood chips and some begin to float.
+
+<a class="splash-photo" target="_BLANK" href="/files/blog/entries/2014/smoking-ribs-and-pulled-pork/wood_chips_in_container.jpg">![Wood chips](/files/blog/entries/2014/smoking-ribs-and-pulled-pork/wood_chips_in_container.jpg)</a>
+
+## Smoking Day:
+
 
 *Jan 14, 2014*

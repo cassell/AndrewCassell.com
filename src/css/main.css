@@ -109,10 +109,18 @@ body
 	}
 }
 
-@media (min-width: 992px)
+@media (min-width: 990px)
 {
 	.blog-container a.splash-photo img
 	{
 		width: 980px;
+	}
+}
+
+@media (min-width: 1200px)
+{
+	.blog-container a.splash-photo img
+	{
+		width: 1180px;
 	}
 }
