@@ -19,7 +19,7 @@ body
 #menu img
 {
 	padding-top: 10px;
-	max-width: 80%
+	max-width: 80%;
 }
 
 #menu #menu-list
@@ -58,6 +58,15 @@ body
 .blog-container img
 {
 	max-width: 100%;
+}
+
+.blog-container pre
+{
+	word-break: normal;
+	background: none;
+	border: none;
+	padding: 0px;
+	word-break: normal;
 }
 
 .full-screen-background
@@ -124,3 +133,44 @@ body
 		width: 1180px;
 	}
 }
+
+@media print
+{
+	body
+	{
+		border-top: none;
+		color: #000;
+		font-size: 1.2em;
+	}
+	
+	#menu img
+	{
+		padding-top: 0px;
+		width: 30%;
+	}
+	
+	.no-print { display: none; }
+	
+	a[href]:after
+	{
+		content: "";
+	}
+	
+	blockquote {
+		border: none;
+		page-break-inside: avoid;
+	}
+	
+	.blog-container
+	{
+		background: #fff;
+		padding: 0px;
+		font-size: 1em;
+		margin-top: 0px;
+		border-top: 0;
+	}
+	
+}
+
+ 
+  

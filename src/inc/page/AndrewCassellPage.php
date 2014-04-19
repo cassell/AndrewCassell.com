@@ -8,10 +8,10 @@ class AndrewCassellPage extends HtmlPage
 		$this->insertStyleSheet('/css/main.css');
 		$this->printHtmlHeader();
 		?>
-		<div id="menu">
+		<div id="menu" >
 			<div class="container">
 				<a href="/"><img src="/img/mast@2x.png"></a>
-				<ul id="menu-list">
+				<ul id="menu-list" class="no-print">
 					<li><a href="/blog/">Blog</a></li>
 					<li><a href="http://www.github.com/cassell">GitHub</a></li>
 					<li><a href="http://www.twitter.com/andrewcassell">Twitter</a></li>
