@@ -1,4 +1,4 @@
-# Apple OS X Dock Bug Credit
+# Apple OS X Screen Lock Bug Credit
 
 Apple credited me with reporting the bug "CVE-2008-2314".
 
