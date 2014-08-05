@@ -4,7 +4,7 @@ This recipe and guide will teach you how to make exceptional [Kansas City-style]
 
 <a class="splash-photo" target="_BLANK" href="/files/blog/entries/2014/smoking-ribs-and-pulled-pork/final-preview-pulled-pork.jpg">![Preview of the final product](/files/blog/entries/2014/smoking-ribs-and-pulled-pork/final-preview-pulled-pork.jpg)</a>
 
-We'll be making 2 full racks of ribs and a 9 pound pork shoulder. It will take about 10hrs in the smoker (2 hours per pound after should is cut in half). This will be enough to serve 6-8 very hungry adults, with everybody getting a few ribs and plenty of pulled pork. This is about max capacity on my Weber Smokey Mountain smoker without using an additional [rack system for the ribs](http://store.weber.com/accessories/category/cook/cookware/1280).
+We'll be making 2 full racks of ribs and a 9 pound pork shoulder. It will take about 10hrs in the smoker (2 hours per pound after the shoulder is cut in half). This will be enough to serve 6-8 very hungry adults, with everybody getting a few ribs and plenty of pulled pork. This is about max capacity on my Weber Smokey Mountain smoker without using an additional [rack system for the ribs](http://store.weber.com/accessories/category/cook/cookware/1280).
 
 <blockquote>Note: I've <a href="https://en.wikipedia.org/wiki/Iterative_and_incremental_development">iterated</a> several times on this recipe and will continue to make updates as I improve it. I have tried very hard to make recipe as simple as possible and I have eliminated as many ingredients as possible.</blockquote>
 
@@ -29,12 +29,12 @@ Ok, let's start with the ribs.
 
 Buy baby back ribs.
 
-They will taste better and be less fatty than spare ribs. They will only cost a little bit more (if you're spending a whole a day cooking then you'll deserve it). Buy ribs that look like they are meaty, trimmed well, and don't show any bone through the inside of the rib cage (these are called "[shiners](http://www.weber.com/weber-nation/grill-skills/mastering-ribs/know-your-cuts__1/what-is-a-shiner)"). I've had great luck with baby back ribs from [Wegman's](http://www.wegmans.com/), [Whole Foods](http://www.wholefoodsmarket.com/), and [Trader Joes](http://www.traderjoes.com/). Buy ribs that are fresh and far from their expiration date.
+They will taste better and be less fatty than spare ribs. Buy ribs that look like they are meaty, trimmed well, and don't show much of bones (these are called "[shiners](http://www.weber.com/weber-nation/grill-skills/mastering-ribs/know-your-cuts__1/what-is-a-shiner)"). I've had great luck with baby back ribs from [Wegman's](http://www.wegmans.com/), [Whole Foods](http://www.wholefoodsmarket.com/), and [Trader Joes](http://www.traderjoes.com/). Buy ribs that are fresh and far from their expiration date.
 <blockquote>Note: I'm still iterating my spare rib recipe and if I can make them as good as the baby backs I will post results.</blockquote>
 <br>
 <a class="splash-photo" target="_BLANK" href="/files/blog/entries/2014/smoking-ribs-and-pulled-pork/ribs_in_package.jpg">![Wegman's Ribs in a package](/files/blog/entries/2014/smoking-ribs-and-pulled-pork/ribs_in_package.jpg)</a>
 
-For the pork shoulder I typically buy an 8 or 9 pound bone in pork shoulder (also known as a "[Boston Butt](https://en.wikipedia.org/wiki/Pork_shoulder)"). If you look closely at the photos you will notice that the pork shoulder is on average about 75% cheaper per pound than the ribs. However, it will taste as good as the ribs, and you will certainly have some people who prefer it. The Boston Butt is going to have to be in the smoker for about 2 hours per pound after it is cut in half.
+For the pork shoulder I typically go with an 8 or 9 pound bone in pork shoulder (also known as a "[Boston Butt](https://en.wikipedia.org/wiki/Pork_shoulder)"). If you look closely at the photos you will notice that the pork shoulder is on average about 75% cheaper per pound than the ribs. However, it will taste as good as the ribs, and you will certainly have some people who prefer it. The Boston Butt is going to have to be in the smoker for about 2 hours per pound after it is cut in half.
 
 <a class="splash-photo" target="_BLANK" href="/files/blog/entries/2014/smoking-ribs-and-pulled-pork/boston_butt.jpg">![Wegman's Pork Shoulder Boston Butt](/files/blog/entries/2014/smoking-ribs-and-pulled-pork/boston_butt.jpg)</a>
 
