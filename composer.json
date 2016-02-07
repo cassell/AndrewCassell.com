@@ -8,8 +8,12 @@
         }
     ],
     "require": {
-		"frameworks/bootstrap": "3.0.3",
-		"dflydev/markdown": "v1.0.3"
+        "michelf/php-markdown": "^1.6",
+        "league/route": "^1.2",
+        "league/plates": "^3.1"
+    },
+    "autoload": {
+        "psr-4": {"AndrewCassell\\": "classes/"}
     }
 	
 }
