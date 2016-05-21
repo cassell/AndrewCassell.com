@@ -55,7 +55,7 @@ class MultiplyWagerPayout implements Payout
 
     public static function TwoOfAKind($kind, $multiplier)
     {
-        return new self(new WinOnNumberOfSymbols(3, new Symbol($kind)), new Amount($multiplier));
+        return new self(new WinOnNumberOfSymbols(2, new Symbol($kind)), new Amount($multiplier));
     }
 
     public static function ThreeOfAKind($kind, $multiplier)
