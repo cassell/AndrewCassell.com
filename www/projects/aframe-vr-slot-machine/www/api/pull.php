@@ -14,7 +14,8 @@ use Cassell\Casino\Slot\WinOnNumberOfSymbols;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Session\Session;
 
-require_once "../../vendor/autoload.php";
+require_once __DIR__ . "/../../vendor/autoload.php";
+
 
 $session = new Session();
 $session->start();
