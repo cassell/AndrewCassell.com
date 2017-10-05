@@ -4,7 +4,7 @@ namespace AndrewCassell;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 
-class ErrorPage extends Controller
+class ErrorPageController extends Controller
 {
     public function get(Request $request, Response $response)
     {

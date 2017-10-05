@@ -1,0 +1,26 @@
+###############################################################################
+#                          Generated on phpdocker.io                          #
+###############################################################################
+version: "3.1"
+services:
+    webserver:
+      image: nginx:alpine
+      container_name: andrewcassell-webserver
+      working_dir: /application
+      volumes:
+          - .:/application
+          - ./docker/nginx/nginx.conf:/etc/nginx/conf.d/default.conf
+      ports:
+       - "62337:80"
+      links:
+       - php-fpm
+
+    php-fpm:
+      build:
+        context: .
+        dockerfile: docker/php-fpm/Dockerfile
+      container_name: andrewcassell-php-fpm
+      working_dir: /application
+      volumes:
+        - .:/application
+        - ./docker/php-fpm/php-ini-overrides.ini:/etc/php/7.1/fpm/conf.d/99-overrides.ini

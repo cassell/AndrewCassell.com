@@ -1,9 +1,9 @@
 <?php
 
-use AndrewCassell\BlogArticle;
-use AndrewCassell\BlogIndex;
-use AndrewCassell\ErrorPage;
-use AndrewCassell\HomePage;
+use AndrewCassell\BlogArticleController;
+use AndrewCassell\BlogIndexController;
+use AndrewCassell\ErrorPageController;
+use AndrewCassell\HomePageController;
 use AndrewCassell\RouteCollection;
 use AndrewCassell\RouteStrategy;
 use Symfony\Component\HttpFoundation\Request;
@@ -15,10 +15,10 @@ $request = Request::createFromGlobals();
 $container = require_once "../config/bootstrap_container.php";
 
 $router = new RouteCollection($container,new RouteStrategy());
-$router->get("/",HomePage::class. "::get");
-$router->get("/error", ErrorPage::class. "::get");
-$router->get("/blog/",BlogIndex::class."::get");
-$router->get("/blog/{year}/{title}/",BlogArticle::class."::get");
+$router->get("/",HomePageController::class. "::get");
+$router->get("/error", ErrorPageController::class. "::get");
+$router->get("/blog/",BlogIndexController::class."::get");
+$router->get("/blog/{year}/{title}/",BlogArticleController::class."::get");
 
 $dispatcher = $router->getDispatcher();
 

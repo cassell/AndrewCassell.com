@@ -5,15 +5,11 @@
     <div class="blog-container">
         <h1>Blog Articles, Talks, and Presentations</h1>
         <p>All Talks: <a href="https://speakerdeck.com/cassell">Speaker Deck</a></p>
-        <?php foreach($entries as $year => $dates): ?>
-           <h2><?= (int)$year ?></h2>
-            <ul>
-            <?php foreach($dates as $date => $articles): ?>
-                <?php foreach($articles as $article): ?>
-                    <li><a href="/blog/<?= (int)$year ?>/<?= $article["folder"] ?>/"><?= $article["title"] ?></a><small><?= date("M j",$date) ?></small></li>
+            <ul class="list-of-blog-articles-and-talks">
+                <?php /** @var \AndrewCassell\BlogArticle $article */
+                foreach($entries as $article): ?>
+                    <li><a href="<?= $article->getUrl() ?>"><?= $this->e($article->getTitle()) ?></a><br><small><?= $article->getDateFormatted("M j, Y") ?></small></li>
                 <?php endforeach; ?>
-            <?php endforeach; ?>
             </ul>
-        <?php endforeach; ?>
     </div>
 </div>

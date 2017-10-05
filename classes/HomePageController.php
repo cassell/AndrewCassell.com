@@ -4,7 +4,7 @@ namespace AndrewCassell;
 
 use Symfony\Component\HttpFoundation\Response;
 
-class HomePage extends Controller
+class HomePageController extends Controller
 {
     public function get(Response $response)
     {

@@ -1,6 +1,6 @@
 <?php
 
-use AndrewCassell\ErrorPage;
+use AndrewCassell\ErrorPageController;
 use Symfony\Component\HttpFoundation\Request;
 
 require_once '../config/config.php';
@@ -10,8 +10,8 @@ $response = new \Symfony\Component\HttpFoundation\Response();
 
 $container = require_once "../config/bootstrap_container.php";
 
-/** @var ErrorPage $errorPage */
-$errorPage = $container->get(ErrorPage::class);
+/** @var ErrorPageController $errorPage */
+$errorPage = $container->get(ErrorPageController::class);
 
 $errorPage->get($request,$response)->send();
 
