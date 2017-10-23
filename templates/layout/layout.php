@@ -8,6 +8,15 @@
     <title>Andrew Cassell - Web Application Developer - Herndon, Virginia - United States of America<?= $title ? ' : ' . $this->e($title) : ''; ?></title>
     <link rel="stylesheet" href="<?= $this->asset('/assets/bootstrap/bootstrap-3.3.6-dist/css/bootstrap.min.css') ?>" type="text/css"/>
     <link rel="stylesheet" href="<?= $this->asset('/assets/css/main.css') ?>" type="text/css"/>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-16667504-1"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'UA-16667504-1');
+    </script>
 </head>
 <body onunload="">
 <div id="menu">
