@@ -29,7 +29,7 @@ class BlogArticle
         if ($fileInfo->getExtension() != "md") {
             throw new \RuntimeException("File must be markdown");
         }
-        $year = (int) basename(dirname(dirname($fileInfo->getPathname())));
+        $year = (int) basename(dirname($fileInfo->getPathname()));
         if($year < 1983) {
             throw new \RuntimeException("I wasn't born yet :)");
         }
@@ -69,7 +69,7 @@ class BlogArticle
 
     public function getUrl()
     {
-        return "/blog/" . $this->date->format("Y") . "/" . basename(dirname($this->relativeUrl)) . "/";
+        return "/blog/" . $this->date->format("Y") . "/" . str_replace(".md","",basename($this->relativeUrl)) . "/";
     }
 
     public function getTitle()

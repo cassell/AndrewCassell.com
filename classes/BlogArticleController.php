@@ -11,11 +11,7 @@ class BlogArticleController  extends Controller
     {
         $year = (int)$year;
 
-        if($year < 2008) {
-            throw new \RuntimeException("Article not found");
-        }
-
-        $filename = "../blog/entries/" . $year . "/" . $title . "/" . $title . '.md';
+        $filename = "../blog/entries/" . $year . "/". $title . '.md';
 
         if(!file_exists($filename))
         {
