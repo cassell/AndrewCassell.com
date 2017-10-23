@@ -23,7 +23,7 @@
     <div class="container">
         <a href="/"><img src="<?= $this->asset('/assets/img/mast@2x.png') ?>"></a>
         <ul id="menu-list" class="no-print">
-            <li><a href="/blog/">Blog &amp; Talks</a></li>
+            <li><a href="/blog/">Presentations + Articles</a></li>
             <li><a href="http://www.github.com/cassell">GitHub</a></li>
             <li><a href="http://www.twitter.com/alc277">Twitter</a></li>
             <li><a href="http://www.facebook.com/andrewcassell">Facebook</a></li>

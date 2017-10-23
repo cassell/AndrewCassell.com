@@ -3,8 +3,9 @@
 
 <div class="container">
     <div class="blog-container">
-        <h1>Blog Articles, Talks, and Presentations</h1>
+        <h1>Blog, Presentations, and Articles</h1>
         <p>All Talks: <a href="https://speakerdeck.com/cassell">Speaker Deck</a></p>
+        <hr>
             <ul class="list-of-blog-articles-and-talks">
                 <?php /** @var \AndrewCassell\BlogArticle $article */
                 foreach($entries as $article): ?>
