@@ -1,6 +1,6 @@
-# php[tek] 2014 Presentation - PHP Closures
+# php[tek] 2014 Presentation: "Obtaining Closure with Anonymous Functions in PHP"
 
-I attended the [2014 php[tek] conference](http://tek14.phparch.com/) and gave a talk entitled "[Obtaining Closure with Anonymous Functions](https://tek14.phparch.com/speakers/#65740)". It was a short talk of 30 minutes that described how to use functional programming techniques in PHP. It covered:
+I was invited to speak at the [2014 php[tek] conference](http://tek14.phparch.com/) and gave a talk entitled "[Obtaining Closure with Anonymous Functions](https://tek14.phparch.com/speakers/#65740)". It was a short talk of 30 minutes that described how to use functional programming techniques in PHP. It covered:
 
 - lambda functions
 - anonymous functions
