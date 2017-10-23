@@ -1,0 +1,75 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<link href="style/energydashboard_style.css" rel="stylesheet" type="text/css" />
+<script language="JavaScript" src="scripts/energydashboard_layout.js"></script>
+
+<script type="text/javascript">
+function writeText(txt)
+{
+document.getElementById("desc").innerHTML=txt
+}
+</script>
+
+
+<title>Penn State Solar Decathlon  .  Energy Dashboard  .  Learning Factory Project : Dashboard</title>
+</head>
+<body onLoad="layout();" onResize="layout(); ">
+
+<div class="leftimage" id="TheLeftPanel"></div>
+<div class="rightimage" id="TheRightPanel"></div>
+
+<div class="mainscreen" id="TheMainPanel">
+
+<div class="title" id="TheTitleBar"><img src="images/title.jpg" alt="Penn State MorningStar Solar Decathlon"/></div>
+
+<div class="menu" id="TheMenuBar">
+<ul>
+<li><a href="index.html">Home</a></li>
+<li style="padding: 15px 0px 0px 0px;"><a href="dashboard.html" class="active">Dashboard</a></li>
+<ol><li style="padding: 0px;"><a href="dashboard.html"style="font-size:16px; padding: 0px;">Design</a></li>
+<li style="font-size:16px; padding: 0px;"><a href="features.html" style="font-size:16px; padding: 0px;">Features</a></li>
+<li style="font-size:16px; padding: 0px;" ><a href="components.html"  class="active" style="font-size:16px; padding: 0px;">Components</a></li>
+<li style="font-size:16px; padding: 0px;"><a href="construction.html" style="font-size:16px; padding: 0px;">Construction</a></li>
+<li style="font-size:16px; padding: 0px;"><a href="costs.html" style="font-size:16px; padding: 0px;">Costs</a></li>
+<li style="font-size:16px; padding: 0px;"><a href="specs.html" style="font-size:16px; padding: 0px;">Specifications</a></li>
+<li style="font-size:16px; padding: 0px;"><a href="documentation.html" style="font-size:16px; padding: 0px;">Documentation</a></li>
+</ol>
+<li><a href="energy_balance.html">Energy Balance</a></li>
+<li><a href="decathlon.html">Solar Decathlon</a></li>
+<li><a href="morningstar.html">MorningStar</a></li>
+<li><a href="team.html">Team</a></li>
+</ul>
+</div>
+<div class="page">
+<a name="top"><div align="center"><i>Move Your Mouse Over the Components to Get Detailed Information</i><img src="images/dashboard_components.jpg" alt="Energy Dashboard Title" border="1" usemap="#components">
+<map name="components">
+<area shape="rect" coords="279,235,308,275" href="#Power" onMouseOver="writeText('<b>Power Button</b><br>600V 30A http://www.mouser.com')">
+<area shape="rect" coords="-2,0,94,267" href="#SolarProduction" onMouseOver="writeText('<b>Solomon LM6270SYL LCD </b><br>240x64 Graphical LCD. http://www.shopeio.com')">
+<area shape="rect" coords="100,226,150,265" href="#EyeLight" onMouseOver="writeText('<b>PIR Sensor</b><br>http://www.parallax.com')">
+<area shape="rect" coords="477,26,578,407" href="#EnergyBalance" onMouseOver="writeText('<b>Energy Balance</b><br>The Energy Balance Graph tells the occupant the current net gain or loss of energy.  When more energy is being produced by the solar array than is being consumed it will positive.')">
+<area shape="rect" coords="97,50,323,203" href="#EnergyScreen" onMouseOver="writeText('<b>DPP-T3224Z53511-BFH iLCD</b><br>320x240 iLCD Touchscreen. http://www.saelig.com')">
+<area shape="rect" coords="337,0,430,267" href="#HistoricalScreen" onMouseOver="writeText('<b>Solomon LM6270SYL LCD </b><br>240x64 Graphical LCD. http://www.shopeio.com')">
+<area shape="rect" coords="26,278,189,414" href="#WeatherScreen" onMouseOver="writeText('<b>MCF5282LITE Evaluation Board</b><br>Ethernet Enabled Microcontroller http://www.microcontrollershop.com')">
+<area shape="rect" coords="216,304,311,394" href="#" onMouseOver="writeText('<b>Current Transducer</b><br>Ohio Semitronics 50A Current Transducer.  Converts current input into 0-5V signal. No Power Connection Required. https://www.ohiosemitronics.com/')"><area shape="rect" coords="343,287,421,342" href="#" onMouseOver="writeText('<b>PIC Microcontroller</b><br>Programable Microcontroller. http://www.microchip.com/')"></map>
+<div align="left">
+<p id="desc"></p>
+</div>
+
+
+</div>
+<br>
+
+
+
+</div>
+
+
+<div class="group_info" align="center">Andrew Cassell&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Ryan Paul&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Teofil Rus&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Vinay Thakker
+</div>
+
+</body>
+</html>

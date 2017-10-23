@@ -1,0 +1,136 @@
+/*  CSS Document                  */
+/*  Energy Dashboard Site CSS     */
+/*  Author: Andrew Cassell        */
+/*          alc277@psu.edu        */
+
+body {
+	margin: 0px 0px 0px 0px; 
+	padding: 0px 0px 0px 0px;
+	font-family:Arial, Helvetica, sans-serif;
+	}
+
+div.leftimage {
+	background-image: url(../images/template_left.jpg);
+	background-repeat: no-repeat;
+	background-position: right top;
+	position: absolute;
+	visibility:hidden;
+	}
+
+div.rightimage {
+	position: absolute;
+	background:url(../images/template_right.jpg);
+	background-repeat: no-repeat;
+	background-position: left top;
+	visibility:hidden;
+	}
+	
+div.mainscreen {
+	position: absolute;
+	background:url(../images/template_middle.jpg);
+	background-repeat: no-repeat;
+	background-position: middle top;
+	visibility:hidden;
+	}
+
+div.title {
+	background:#F6F6F6;
+	width: 859px;
+	height: 88px;
+	position: absolute;
+	visibility:hidden;
+	}
+	
+div.menu {
+	background:url(../images/menu_background.jpg);
+	width:197px;
+	height:556px;
+	position: absolute;
+	visibility: hidden;
+	padding: 30px 0px 0px 0px;
+	}
+
+div.menu ul {
+	float: left;
+	position:absolute;
+	font-family:Arial, Helvetica, sans-serif;
+	color:#000099;
+	font-size:22px;
+	left: -20px;
+}
+
+div.menu ul li {
+	padding: 15px 0px 15px 0px;
+	display:block;
+	
+}
+
+div.menu ul ol {
+	position: relative;
+	left:25px;
+	display:inline;
+	margin: 0px;
+	
+}
+
+div.menu ul li a {
+	font-family:Arial, Helvetica, sans-serif;
+	color:#000099;
+	font-size:22px;
+	text-decoration:none;
+}
+
+div.menu ul li a:hover {
+	font-family:Arial, Helvetica, sans-serif;
+	color:#80A12D;
+	font-size:22px;
+	text-decoration:none;
+}
+
+div.menu ul li a.active{
+	font-family:Arial, Helvetica, sans-serif;
+	color:#80A12D;
+	font-size:22px;
+	text-decoration:none;
+}
+
+div.group_info {
+	font-family:Arial, Helvetica, sans-serif;
+	font-size:16px;
+	color:#666666;
+	position:absolute;
+	top: 760px;
+	width: 100%;
+}
+
+div.page {
+	width: 650px;
+	height: 560px;
+	overflow:scroll;
+	position: absolute;
+	top: 141px;
+	left: 247px;
+	padding: 10px 10px 10px 10px;
+	text-decoration: none;
+}
+
+div.page p a{
+	text-decoration: none;
+}
+
+p.MsoNormal a{
+	text-decoration: none;
+}
+
+div.team_member {
+	text-decoration: none;
+}
+
+div.team_member img {
+	border:#000099 2px solid;
+	margin: 0px 10px 0px 0px;
+}
+
+div.doclinks a {
+	text-decoration: none;
+}
