@@ -2,6 +2,7 @@
 namespace AndrewCassell;
 
 use Michelf\MarkdownExtra;
+use SplFileInfo;
 use Symfony\Component\HttpFoundation\Response;
 
 class BlogArticleController  extends Controller
@@ -21,11 +22,13 @@ class BlogArticleController  extends Controller
             throw new \RuntimeException("Article not found");
         }
 
+        $article = BlogArticle::fromFileInfo(new SplFileInfo($filename));
+
         $contents = file_get_contents($filename);
 
         $contents = $markdown->transform($contents);
 
-        $response->setContent($this->engine->render("/blog/article",['title' => $title, "article" => $contents]));
+        $response->setContent($this->engine->render("/blog/article",['title' => $article->getTitle(), "article" => $contents]));
 
         return $response;
 
