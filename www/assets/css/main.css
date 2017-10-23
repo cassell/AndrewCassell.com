@@ -32,7 +32,6 @@ body
 	font-size: 1em;
 	margin: 0;
 	padding: 10px 0 0 0;
-	/*text-align: right;*/
 }
 
 #menu #menu-list li
@@ -94,7 +93,7 @@ body
 }
 
 
-@media (min-width: 900px)
+@media (min-width: 1020px)
 {
 	#menu img
 	{
