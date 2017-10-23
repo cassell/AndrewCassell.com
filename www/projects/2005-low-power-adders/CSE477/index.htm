@@ -1,0 +1,619 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<link href="../../style/andrewcassell.css" rel="stylesheet" type="text/css" />
+<title>CSE 477 Project: Sub threshold Data Path Circuit Design</title>
+</head>
+
+<body>
+<a name="Top"></a>
+<div class="andy_title">CSE 477: VLSI Digital Circuits Course Project</div>
+<div align="center" class="projects_list">Subthreshold Data Path Circuit Design:<br>
+Two Implementations of Low Power Simple Adders</div>
+<hr>
+<div class="report_link_container">
+<a href="#Proposal"><div class="report_link_object">Proposal<br>Report</div></a>
+<a href="#Specs"><div class="report_link_object">Specification<br>Report</div></a>
+<a href="#Prototype"><div class="report_link_object">Prototype<br>Report</div></a>
+<a href="#Final"><div class="report_link_object">Final<br>Report</div></a>
+<a href="./diagrams/12082005Pres.ppt"><div class="report_link_object">PowerPoint<br>Presentation</div></a>
+
+</div>
+<hr>
+<a name="Proposal"></a>
+<div class="projects_list">Proposal:</div>
+<a href="./reportPDFs/ProjectProposal.pdf" style="text-decoration:none"><img src="reportPDFs/pdf.png" width="32" height="32" align="absmiddle">Project Proposal.pdf</a><br>
+<br>
+Andrew Cassell<br>
+September 27, 2005<br>
+
+<br>
+<strong>Project Description:</strong>
+<p>Power consumption is becoming an ever increasing problem in today&rsquo;s laptops, cellular telephones, and portable music players.<br><br>
+  This project will look at the effects of operating two simple 8 bit ripple carry adder designs at a very low sub threshold supply voltage. One design will be a static CMOS design, and one will be a dynamic CMOS design. The goal of this project is to deduce which method of construction will give the best performance while consuming the least amount of power. It is possible that the circuit may also consume the least power vs. speed of operation at a point not at the minimum supply voltage.<br>
+  This adder could be used to control the access to music from either an optical disc or internal memory. This application will be used as the basis for the minimum operating characteristics. For a simple mp3 player the adder would need to address memory much like a program counter with a constant being added with the ability to jump. Most mp3 are encoded at 128kbps and 44.1 kHz. In the same way a CD player samples the data on the disc at 44.1 kHz, so if the simple adder where to be used in an audio device to control what would play (not decoding the signal) it must operate at least that speed, if not higher. </p>
+<p><strong>Project Floor Plan:</strong></p>
+<p align="center"><strong><img src="diagrams/8BitFullAdder.jpg" width="520" height="416"></strong></p>
+<p class="liberty_quote" align="center">Figure 1. 8 Bit Adder </p>
+<p> The two designs will both have the same topology, they will be 8 full single bit adders chained together. The total circuit will have 2-8 bit words as inputs, a carry in, a carry out. That makes for a total of 18 inputs. The circuit will output the sum and a carry out, for a total of 9 outputs. <br>
+  The adder will be connected to a constant input and with a 2-to-1 Mux to give the ability for the circuit to select the previous sum, or jump to another input.</p>
+<p align="center"><img src="diagrams/8BitAdderJump.jpg" width="552" height="832"></p>
+<p class="liberty_quote" align="center">Figure 2. 8 Bit Adder With 2-to-1 Mux Allowing For Jump </p>
+<p>The other project member is no longer enrolled in the class, so Andrew Cassell will be responsible for all design and testing.</p>
+<a href="#Top">(Top)</a>
+<br>
+<hr>
+<a name="Specs"></a>
+<div class="projects_list">Project Specifications:</div>
+<a href="./reportPDFs/ProjectSpecifications.pdf" style="text-decoration:none"><img src="reportPDFs/pdf.png" width="32" height="32" align="absmiddle">Project Specifications.pdf</a><br>
+<p>Andrew Cassell<br>
+  October 11, 2005<br>
+  <br>
+  Subthreshold Data Path Circuit Design:<br>
+Two Implementations of Low Power Simple Adder</p>
+<p><strong>Project Specification: </strong></p>
+<p><strong></strong> For this project I will be doing two different implementations of a simple 8 bit program controller. The circuits will have the same topology, but one adder will be built using static CMOS construction, the other using dynamic CMOS construction. The circuit will be an 8 bit adder with one input connected to a static input of 00000001, the other input will be connected to a 2-to-1 flip-flopped Mux. The Mux will control whether the input to the adder will be the previous sum or a jump to value. This is designed to simulate the program control that would be required to continuously read from a memory address such as in a portable music player, but have the ability to skip(jump) to the next song in memory.</p>
+<p align="center"><img src="diagrams/8BitProgramCounter.jpg" width="653" height="820"></p>
+<p class="liberty_quote" align="center">Figure 3. Circuit Topology: 8 Bit Adder With 2-to-1 Mux and D Flip Flop Allowing For Jump </p>
+<p>The static versus dynamic circuits should be an interesting comparison.  The static CMOS design will only dissipate dynamic(switching) power as there is no path from supply voltage to ground.  However, the number of transistors in the static CMOS will be almost twice as many as the dynamic CMOS implementation.  Static CMOS with a fan in of N requires 2N transistors.  This may require more power to switch more transistors.  
+  <br>
+  <br>
+The dynamic CMOS will only require N+2 transistors for an input fan-in of N, which is substantially lower.  The dynamic CMOS also consumes only dynamic power, however the overall power dissipation can be much higher.  Finally the dynamic CMOS should be faster due to the reduced load capacitance attributed to the lower number of transistors per gate.  Also the dynamic gates do not have short circuit current, and all the current provided by the pull-down transistors go towards discharging the load capacitance.
+It will also require the clock, and possibly a skewed clock, be sent to every block in the circuit.</p>
+<p>It may be possible that some sections of the design work best in static CMOS and some in dynamic CMOS. The circuit is going to be laid out in a modular form in MAX, so If testing of the components proves that some parts should be static, some dynamic, a third &quot;uber&quot; circuit will be constructed in the prototype phase and analyzed.</p>
+<p align="left"><strong>Block Specification:</strong></p>
+<p align="left"><strong>8bit 2-to-1 Multiplexor:</strong></p>
+<p align="left">This will allow us to select whether the input will be a jump or the previous sum to keep counting. It will be a basic 8 bit 2-to-1 Multiplexor Designed in Static and Dynamic CMOS respectively. </p>
+<code>
+<p align="center"><img src="diagrams/mux21.gif" width="292" height="474"></p>
+</code>
+<p class="liberty_quote" align="center">Figure 4. 2-to-1 Mux ( Choi) </p>
+<p align="left"><strong>D Flip Flop:</strong></p>
+<p align="left">This block will keep the adder functioning at the speed of the clock, and keep the output from reaching the input before the next clock edge. </p>
+<p align="center"><img src="diagrams/dlatch.gif" width="312" height="366"><img src="diagrams/dff.gif" width="260" height="420"><br>
+</p>
+<p class="liberty_quote" align="center">Figure 5. D Flip Flop(Choi) </p>
+<p align="left"><strong>8-Bit Full Adder:</strong></p>
+<p align="left">I will using the ripple carry adder to try and reduce the number of transistors used, and based on the fact that the adder will be used much like a counter, not much carrying will have to propagate before the correct answer is achieved. The text suggests that if a more complex adder is used then the amount of power required to keep a desired performance could be lowered. However, in this experiment we will test only the advantages of dynamic vs. static implementations.</p>
+<p align="left">Because the inverting property of an adder:</p>
+<p align="left">S'(A,B,Cin)= S(A', B' Cin') and C'(A,B,Cin) = C(A', B', C') the inverters in the carry path become unnecessary.</p>
+<p align="center"><img src="diagrams/8Bitfulladderchain.gif" width="694" height="227"></p>
+<p class="liberty_quote" align="center">Figure 6. Full Adder Chain </p>
+<p align="left">For the static CMOS implementation a mirror adder will be used. The mirror adder is an improved design of the tradition full bit adder. It uses only 24 transistors and the those concerning the carry are placed closed to the output of the gate. Only the transistors in the carry stage of the circuit have to be optimized for speed. The most critical issue in the layout of the cell is the minimization of the capacitance at carry out.</p>
+<p align="center"><img src="diagrams/mirror-adder.gif" width="617" height="414"> </p>
+<p class="liberty_quote" align="center">Figure 7. The Mirror Adder </p>
+
+<p align="left">For the dynamic design the mirror adder is stripped of it's pull up network and replaced with a clocked precharge transistor and an extra evaluation transistor on the pull down network.</p>
+<p align="center"><img src="diagrams/dynamiccmos.gif" width="331" height="343"></p>
+<p class="liberty_quote" align="center">Figure 8. Basic Dynamic CMOS Design</p>
+<p align="center"><img src="diagrams/8bitdynamicadder.GIF" width="801" height="418"></p>
+<p class="liberty_quote" align="center">Figure 9. Dynamic CMOS Adder</p>
+<p align="left">&nbsp;</p>
+<p align="left"><strong>Sources:</strong></p>
+Paul Gillard<br>
+http://web.cs.mun.ca/~paul/cs3724/material/web/notes/node14.html<br>
+<br>
+Kyusun Choi<br>
+http://www.cse.psu.edu/~cg471/<br><br>
+<hr>
+<a name="Prototype"></a>
+<div class="projects_list">Project Prototype:</div>
+<a href="./reportPDFs/ProjectPrototype.pdf" style="text-decoration:none"><img src="reportPDFs/pdf.png" width="32" height="32" align="absmiddle">Project Prototype.pdf</a><br>
+<p>Andrew Cassell<br>
+  November 15, 2005<br>
+  <br>
+  Subthreshold Data Path Circuit Design:<br>
+Two Implementations of Low Power Simple Adder</p>
+<p><strong>Project Overview:</strong></p>
+<p>For this project I will be doing two different implementations of a simple 8 bit program controller. The circuits will have the same topology, but one adder will be built using static CMOS construction, the other using dynamic CMOS construction. The circuit will be an 8 bit adder with one input connected to a static input of 00000001, the other input will be connected to a 2-to-1 flip-flopped Mux. The Mux will control whether the input to the adder will be the previous sum or a jump to value. This is designed to simulate the program control that would be required to continuously read from a memory address such as in a portable music player, but have the ability to skip(jump) to the next song in memory.</p>
+<p><strong>1 Bit 2-to-1 Mux:</strong></p>
+<p>For the prototype I used a two stage NAND implementation of the Multiplexor. </p>
+<p align="center"><img src="diagrams/2to1Mux.jpg" width="245" height="313"/></p>
+<p class="liberty_quote" align="center">Figure 10. 1 Bit 2-to-1 Multiplexor (Choi) </p>
+
+<p align="center"><strong>Inputs and Outputs</strong></p>
+<table width="483" border="1" align="center">
+  <tr bgcolor="#99CC99">
+    <th width="77" scope="col"><div align="center">Type</div></th>
+    <th width="74" scope="col"><div align="center">Name</div></th>
+    <th width="310" scope="col"><div align="center">Description</div></th>
+  </tr>
+  <tr>
+    <td><div align="center">Input</div></td>
+    <td><div align="center">D0</div></td>
+    <td><div align="center">Data Input Selected When Sel goes Low </div></td>
+  </tr>
+  <tr>
+    <td><div align="center">Input</div></td>
+    <td><div align="center">D1</div></td>
+    <td><div align="center">Data Input Selected When Sel goes High </div></td>
+  </tr>
+  <tr>
+    <td><div align="center">Input</div></td>
+    <td><div align="center">Sel</div></td>
+    <td><div align="center">Selects Which Data is Connected to Output</div></td>
+  </tr>
+  <tr>
+    <td><div align="center">Output</div></td>
+    <td><div align="center">Z</div></td>
+    <td><div align="center">Data Output </div></td>
+  </tr>
+</table>
+<p align="center"><strong>Specifications</strong></p>
+<div align="center">
+  <table width="200" border="1">
+    <tr bgcolor="#99CC99">
+      <th scope="col"><div align="center">Measure</div></th>
+      <th scope="col"><div align="center">Value</div></th>
+    </tr>
+    <tr>
+      <td><div align="center">Width</div></td>
+      <td><div align="center">6.8</div></td>
+    </tr>
+    <tr>
+      <td><div align="center">Length</div></td>
+      <td><div align="center">17.37</div></td>
+    </tr>
+    <tr>
+      <td><div align="center">Avg Power </div></td>
+      <td><div align="center">3.92&mu;W</div></td>
+    </tr>
+    <tr>
+      <td><div align="center">Peak Power </div></td>
+      <td><div align="center">1.38mW</div></td>
+    </tr>
+    <tr>
+      <td><div align="center">Supply Voltage </div></td>
+      <td><div align="center">1V</div></td>
+    </tr>
+  </table>
+</div>
+<p align="left">&nbsp;</p>
+<p align="left">The Power supply rails extend on the left beyond the upper and lower bounds of the transistor layout to accommodate power rails. Inputs are taken from a metal layer.</p>
+<p align="center"><img src="layouts/2to1mux-cmos-design-cropped.jpg" width="305" height="697"></p>
+<p class="liberty_quote" align="center">Figure 12. 2-to-1 Multiplexor VLSI Max Design </p>
+<p>The block will receive a VDD of 1V during the final design to isolate the effects of the subthreshold testing to the add data path. Speed as a result should be no problem. </p>
+<p>The following graph shows the 2-to-1 Multiplexor operating correctly, for all of the possible inputs. Not all of the possible transitions were considered, because this portion of the circuit should be much faster than the rest of the circuit as it will be operating above the threshold. The Z output follows the d0 input while the sel line is at 0, and then follows d1 when sel is at 1. </p>
+<p align="center"><img src="plots/2to1mux-cmos-awaves-confirm.jpg" width="1224" height="855"></p>
+<p class="liberty_quote" align="center">Figure 13. Awaves Output Plot of the 2-to-1 Mux </p>
+<p align="center"> Files Related to the 2-to-1 Multiplexor: </p>
+<div align="center">
+  <table width="252" border="1">
+    <tr>
+      <th width="77" scope="col">Description</th>
+      <th width="159" scope="col">Link</th>
+    </tr>
+    <tr>
+      <td>Max Layout </td>
+      <td><a href="file:///C|/dev/andrewcassell/hwfiles/CSE477/hspice/2to1mux-cmos.max">2to1mux-cmos.max</a></td>
+    </tr>
+    <tr>
+      <td>HSpice</td>
+      <td><a href="file:///C|/dev/andrewcassell/hwfiles/CSE477/hspice/2to1mux-cmos.sp">2to1mux-cmos.sp</a></td>
+    </tr>
+    <tr>
+      <td>Inputs</td>
+      <td><a href="file:///C|/dev/andrewcassell/hwfiles/CSE477/hspice/2to1mux-cmos.hsp">2to1mux-cmos.hsp</a></td>
+    </tr>
+    <tr>
+      <td>Measures</td>
+      <td><a href="file:///C|/dev/andrewcassell/hwfiles/CSE477/hspice/2to1mux-cmos.mt0">2to1mux-cmos.mto</a></td>
+    </tr>
+  </table>
+  <hr width="600" noshade>
+  <p align="left"><strong>1 Bit D-Flip-Flop</strong></p>
+  <p align="left">Using the design of the 2-to-1 Mux a D-latch was first constructed, and then used to create a positive edge triggered flip-flop. </p>
+  <p align="center"><img src="diagrams/dlatch.gif" width="312" height="366"><img src="diagrams/dff.gif" width="260" height="420"><br>
+</p>
+<p class="liberty_quote" align="center">Figure 14. D Flip Flop(Choi) </p>
+  <p align="left">&nbsp;</p>
+  <p align="center"><strong>Inputs and Outputs</strong></p>
+  <table width="483" border="1" align="center">
+    <tr bgcolor="#99CC99">
+      <th width="77" scope="col"><div align="center">Type</div></th>
+      <th width="74" scope="col"><div align="center">Name</div></th>
+      <th width="310" scope="col"><div align="center">Description</div></th>
+    </tr>
+    <tr>
+      <td><div align="center">Input</div></td>
+      <td><div align="center">D</div></td>
+      <td><div align="center">Data Input </div></td>
+    </tr>
+    <tr>
+      <td><div align="center">Input</div></td>
+      <td><div align="center">Clock</div></td>
+      <td><div align="center">Triggers the Data to be read on rising edge </div></td>
+    </tr>
+    <tr>
+      <td><div align="center">Output</div></td>
+      <td><div align="center">Q</div></td>
+      <td><div align="center">Data Output</div></td>
+    </tr>
+  </table>
+  <p align="center"><strong>Specifications</strong></p>
+  <div align="center">
+    <table width="200" border="1">
+      <tr bgcolor="#99CC99">
+        <th scope="col"><div align="center">Measure</div></th>
+        <th scope="col"><div align="center">Value</div></th>
+      </tr>
+      <tr>
+        <td><div align="center">Width</div></td>
+        <td><div align="center">14.85</div></td>
+      </tr>
+      <tr>
+        <td><div align="center">Length</div></td>
+        <td><div align="center">17.40</div></td>
+      </tr>
+      <tr>
+        <td><div align="center">Avg Power </div></td>
+        <td><div align="center">6.10&mu;W</div></td>
+      </tr>
+      <tr>
+        <td><div align="center">Peak Power </div></td>
+        <td><div align="center">2.57mW</div></td>
+      </tr>
+      <tr>
+        <td><div align="center">Supply Voltage </div></td>
+        <td><div align="center">1V</div></td>
+      </tr>
+    </table>
+  </div>
+</div>
+<p align="center"><img src="layouts/D-flip-flop-design-cropped.jpg" width="603" height="703"></p>
+<p class="liberty_quote" align="center">Figure 15. D Flip Flop VLSI Design</p>
+<p>The block will receive a VDD of 1V during the final design to isolate the effects of the subthreshold testing to the add data path. Speed as a result should be no problem. </p>
+<p>The following graph shows the D flip flop operating correctly, for all of the possible inputs. Not all of the possible transitions were considered, because this portion of the circuit should be much faster than the rest of the circuit as it will be operating above the threshold. The Q output follows the d input when the there is a rising clock edge. </p>
+<p align="center"><img src="plots/D-flip-flop-confirm.jpg" width="1224" height="810"></p>
+<p class="liberty_quote" align="center">Figure 16. Awaves Output of the D Flip Flop Test </p>
+<p align="center">Files Related to the D Flip Flop: </p>
+<div align="center">
+  <table width="218" border="1">
+    <tr>
+      <th width="77" scope="col">Description</th>
+      <th width="125" scope="col">Link</th>
+    </tr>
+    <tr>
+      <td>Max Layout </td>
+      <td><a href="file:///C|/dev/andrewcassell/hwfiles/CSE477/hspice/D-flip-flop.max">D-flip-flop.max</a></td>
+    </tr>
+    <tr>
+      <td>HSpice</td>
+      <td><a href="file:///C|/dev/andrewcassell/hwfiles/CSE477/hspice/D-flip-flop.sp">D-flip-flop.sp</a></td>
+    </tr>
+    <tr>
+      <td>Inputs</td>
+      <td><a href="file:///C|/dev/andrewcassell/hwfiles/CSE477/hspice/D-flip-flop.hsp">D-flip-flop.hsp</a></td>
+    </tr>
+    <tr>
+      <td>Measures</td>
+      <td><a href="file:///C|/dev/andrewcassell/hwfiles/CSE477/hspice/D-flip-flop.mt0">D-flip-flop.mto</a></td>
+    </tr>
+  </table>
+  <hr width="600" noshade>
+  <p>&nbsp;</p>
+</div>
+<p><strong>Static CMOS 1 Bit Mirror Adder:</strong></p>
+<p>The prototype is a 1 bit full mirror adder designed in static CMOS.</p>
+<p>. </p>
+<p align="center"><img src="diagrams/mirror-adder.gif" width="617" height="414"> </p>
+<p class="liberty_quote" align="center">Figure 17. The Mirror Adder </p>
+<p>&nbsp;</p>
+<p align="center"><strong>Inputs and Outputs</strong></p>
+<table width="483" border="1" align="center">
+  <tr bgcolor="#99CC99">
+    <th width="77" scope="col"><div align="center">Type</div></th>
+    <th width="74" scope="col"><div align="center">Name</div></th>
+    <th width="310" scope="col"><div align="center">Description</div></th>
+  </tr>
+  <tr>
+    <td><div align="center">Input</div></td>
+    <td><div align="center">A</div></td>
+    <td><div align="center">Data Input </div></td>
+  </tr>
+  <tr>
+    <td><div align="center">Input</div></td>
+    <td><div align="center">B</div></td>
+    <td><div align="center">Data Input </div></td>
+  </tr>
+  <tr>
+    <td><div align="center">Input</div></td>
+    <td><div align="center">Cin</div></td>
+    <td><div align="center">Carry In</div></td>
+  </tr>
+  <tr>
+    <td><div align="center">Output</div></td>
+    <td><div align="center">Cout</div></td>
+    <td><div align="center">Carry Out </div></td>
+  </tr>
+  <tr>
+    <td><div align="center">Output</div></td>
+    <td><div align="center">Sum</div></td>
+    <td><div align="center">Sum</div></td>
+  </tr>
+</table>
+<p align="center"><strong>Specifications</strong></p>
+<div align="center">
+  <table width="200" border="1">
+    <tr bgcolor="#99CC99">
+      <th scope="col"><div align="center">Measure</div></th>
+      <th scope="col"><div align="center">Value</div></th>
+    </tr>
+    <tr>
+      <td><div align="center">Width</div></td>
+      <td><div align="center">10.69</div></td>
+    </tr>
+    <tr>
+      <td><div align="center">Length</div></td>
+      <td><div align="center">21.16</div></td>
+    </tr>
+    <tr>
+      <td><div align="center">Avg Power </div></td>
+      <td><div align="center">4.47&mu;W</div></td>
+    </tr>
+    <tr>
+      <td><div align="center">Peak Power </div></td>
+      <td><div align="center">0.89mW</div></td>
+    </tr>
+    <tr>
+      <td><div align="center">Supply Voltage </div></td>
+      <td><div align="center">1V</div></td>
+    </tr>
+  </table>
+</div>
+<p align="center"><img src="layouts/mirror-adder-cmos-layout-cropped.jpg" width="313" height="725"></p>
+<p class="liberty_quote" align="center">Figure 18. The Mirror Adder VLSI Design </p>
+<p>The following graph shows the cmos adder operating correctly, for all of the possible inputs at a supply voltage of 1V. Speed was not considered because the design is going to focus on achieving to lowest power which the greatest speed for an operating block of 8 units.</p>
+<p>Note: Cin and Sum in the plot are actually Cin' and Sum'</p>
+<img src="plots/mirror-adder-cmos-awaves.jpg" width="1224" height="894">
+<p class="liberty_quote" align="center">Figure 19. Awaves Output Test Waveform </p>
+<p align="center">Files Related to the D Flip Flop: </p>
+<div align="center">
+  <div align="center">
+    <table width="275" border="1">
+      <tr>
+        <th width="94" scope="col">Description</th>
+        <th width="165" scope="col">Link</th>
+      </tr>
+      <tr>
+        <td>Max Layout </td>
+        <td><a href="file:///C|/dev/andrewcassell/hwfiles/CSE477/hspice/mirror-adder-cmos.max">mirror-adder-cmos.max</a></td>
+      </tr>
+      <tr>
+        <td>HSpice</td>
+        <td><a href="file:///C|/dev/andrewcassell/hwfiles/CSE477/hspice/mirror-adder-cmos.sp">mirror-adder-cmos.sp</a></td>
+      </tr>
+      <tr>
+        <td>Inputs</td>
+        <td><a href="file:///C|/dev/andrewcassell/hwfiles/CSE477/hspice/mirror-adder-cmos.hsp">mirror-adder-cmos.hsp</a></td>
+      </tr>
+      <tr>
+        <td>Measures</td>
+        <td><a href="file:///C|/dev/andrewcassell/hwfiles/CSE477/hspice/mirror-adder-cmos.mt0">mirror-adder-cmos.mto</a></td>
+      </tr>
+    </table>
+    <hr width="600" noshade>
+    <p>&nbsp;</p>
+  </div>
+  <p><strong>Dynamic CMOS 1 Bit Mirror Adder:</strong></p>
+  <p>The prototype is a 1 bit full mirror adder designed in dynamic CMOS.</p>
+  <p>. </p>
+<p align="center"><img src="diagrams/8bitdynamicadder.GIF" width="801" height="418"> </p>
+<p class="liberty_quote" align="center">Figure 20. The Dynamic Mirror Adder </p>
+<p>&nbsp;</p>
+<p align="center"><strong>Inputs and Outputs</strong></p>
+<table width="483" border="1" align="center">
+  <tr bgcolor="#99CC99">
+    <th width="77" scope="col"><div align="center">Type</div></th>
+    <th width="74" scope="col"><div align="center">Name</div></th>
+    <th width="310" scope="col"><div align="center">Description</div></th>
+  </tr>
+  <tr>
+    <td><div align="center">Input</div></td>
+    <td><div align="center">A</div></td>
+    <td><div align="center">Data Input </div></td>
+  </tr>
+  <tr>
+    <td><div align="center">Input</div></td>
+    <td><div align="center">B</div></td>
+    <td><div align="center">Data Input </div></td>
+  </tr>
+  <tr>
+    <td><div align="center">Input</div></td>
+    <td><div align="center">Cin</div></td>
+    <td><div align="center">Carry In</div></td>
+  </tr>
+  <tr>
+    <td><div align="center">Input</div></td>
+    <td><div align="center">Clock</div></td>
+    <td><div align="center">Clock Signal</div></td>
+  </tr>
+  <tr>
+    <td><div align="center">Output</div></td>
+    <td><div align="center">Cout</div></td>
+    <td><div align="center">Carry Out </div></td>
+  </tr>
+  <tr>
+    <td><div align="center">Output</div></td>
+    <td><div align="center">Sum</div></td>
+    <td><div align="center">Sum</div></td>
+  </tr>
+</table>
+<p align="center"><strong>Specifications</strong></p>
+<div align="center">
+  <table width="200" border="1">
+    <tr bgcolor="#99CC99">
+      <th scope="col"><div align="center">Measure</div></th>
+      <th scope="col"><div align="center">Value</div></th>
+    </tr>
+    <tr>
+      <td><div align="center">Width</div></td>
+      <td><div align="center">13.9</div></td>
+    </tr>
+    <tr>
+      <td><div align="center">Length</div></td>
+      <td><div align="center">23.19</div></td>
+    </tr>
+    <tr>
+      <td><div align="center">Avg Power </div></td>
+      <td><div align="center">5.94&mu;W</div></td>
+    </tr>
+    <tr>
+      <td><div align="center">Peak Power </div></td>
+      <td><div align="center">1.53mW</div></td>
+    </tr>
+    <tr>
+      <td><div align="center">Supply Voltage </div></td>
+      <td><div align="center">1V</div></td>
+    </tr>
+  </table>
+</div>
+<p align="center"><img src="layouts/mirror-adder-dynamic-max-cropped.jpg" width="473" height="757"></p>
+<p class="liberty_quote" align="center">Figure 21. The Dynamic Mirror Adder VLSI Design </p>
+<p>The following graph shows the dynamic adder operating correctly, for all of the possible inputs at a supply voltage of 1V. Speed was not considered because the design is going to focus on achieving to lowest power which the greatest speed for an operating block of 8 units.</p>
+<p>Note: Cin and Sum in the plot are actually Cin' and Sum</p>
+<p align="center"><img src="plots/mirror-adder-dynamic-confirm.jpg" width="1224" height="976"></p>
+<p class="liberty_quote" align="center">Figure 22. Awaves Output Test Waveform </p>
+<p align="center">Files Related to the D Flip Flop: </p>
+<div align="center">
+  <table width="307" border="1">
+    <tr>
+      <th width="77" scope="col">Description</th>
+      <th width="214" scope="col">Link</th>
+    </tr>
+    <tr>
+      <td>Max Layout </td>
+      <td><a href="file:///C|/dev/andrewcassell/hwfiles/CSE477/hspice/mirror-adder-dynamic.max">mirror-adder-dynamic.max</a></td>
+    </tr>
+    <tr>
+      <td>HSpice</td>
+      <td><a href="file:///C|/dev/andrewcassell/hwfiles/CSE477/hspice/mirror-adder-dynamic.sp">mirror-adder-dynamic.sp</a></td>
+    </tr>
+    <tr>
+      <td>Inputs</td>
+      <td><a href="file:///C|/dev/andrewcassell/hwfiles/CSE477/hspice/mirror-adder-dynamic.hsp">mirror-adder-dynamic.hsp</a></td>
+    </tr>
+    <tr>
+      <td>Measures</td>
+      <td><a href="file:///C|/dev/andrewcassell/hwfiles/CSE477/hspice/mirror-adder-dynamic.mt0">mirror-adder-dynamic.mto</a></td>
+    </tr>
+  </table>
+  <p align="left"><strong>Comparison</strong></p>
+  <p align="left">So far the CMOS design appears to consume the least amount of power. To design this part of a music player, most power use is going to come from the dynamic power. As a result I expect to see the CMOS's dynamic power to be less, but the dynamic circuit should use less static power. </p>
+
+<hr>
+</div> 
+<div align="left"><a name="Final"></a>
+</div>
+<div class="projects_list">
+  <div align="left">Final Report:</div>
+</div>
+<div align="left"><a href="./reportPDFs/ProjectFinal.pdf" style="text-decoration:none"><img src="reportPDFs/pdf.png" width="32" height="32" align="absmiddle">Project Final Report.pdf</a><br>
+</div>
+<p align="left">Andrew Cassell<br>
+  December 5, 2005<br>
+  <br>
+  Subthreshold Data Path Circuit Design:<br>
+Two Implementations of Low Power Simple Adder</p>
+<p align="left"><strong>Project Overview: </strong></p>
+<p align="left"><strong></strong> For this project I will be doing two different implementations of a simple 8 bit program controller. The circuits will have the same topology, but one adder will be built using static CMOS construction, the other using dynamic CMOS construction. The circuit will be an 8 bit adder with one input connected to a static input of 00000001, the other input will be connected to a 2-to-1 flip-flopped Mux. The Mux will control whether the input to the adder will be the previous sum or a jump to value. This is designed to simulate the program control that would be required to continuously read from a memory address such as in a portable music player, but have the ability to skip(jump) to the next song in memory. The design however failed to perform as expected.</p>
+<p align="center"><img src="layouts/8-Bit-Layout-Cropped.jpg" width="662" height="468"></p>
+<p class="liberty_quote" align="center">Figure 22. Static CMOS Layout </p>
+<p align="center"><img src="layouts/8-Bit-Layout-Tagged.JPG" width="662" height="468"></p>
+<p class="liberty_quote" align="center">Figure 23. Static CMOS Layout With I/Os Labeled </p>
+<p align="left">The design was 159.100 X 111.730, but was plauged with problems. The counter never quite functioned correctly with the flip flops in place. The system had inputs for VDD, GND, clock, JUMP input, and a 8 bit input for Jump Address. The counter does count to about 4 and then loses it self once the carryout is passed.</p>
+<p align="left"><img src="plots/8-Bit-Awaves.jpg" width="1224" height="850"></p>
+<p class="liberty_quote" align="center">Figure 24. Static CMOS Awaves Output</p>
+<p align="left">The layouts were optimized by making sure each component fit nearly the same form factor when placed on the grid. This allowed the GND and VDD lines to be easily placed going horizontally in an evenly spaced out manner. By using a cascading adder design, in which the carry's are not put through an inverter between each adder, I was able to reduce the area needed. The transistors were sized to the proper size for the mirror adders to insure optimum performance and to balance the upswing and downswing charactaristics.</p>
+<p align="left"><strong>Conclusions</strong></p>
+<p align="left">To make a comparision between the dynamic and static CMOS designs as the correspond to power usage, I will examine the single bitter adders when they are not connected to the rest of the system. The static CMOS design uses less dynamic power, and because the counter is switching constantly very little static power will be dissipated. As you can see in the graph below, there are biggest reductions in the power consuption when we use sub threshold design. You can see the change in the curve as the VDD approaches Vt. </p>
+<table width="1120" cellpadding="0" cellspacing="0">
+  <tr bgcolor="#99CC99">
+    <td width="96"><div align="center">Supply (V)</div></td>
+    <td width="160"><div align="center">Static CMOS Avg (W)</div></td>
+    <td width="160"><div align="center">Static CMOS Max (W)</div></td>
+    <td width="176"><div align="center">Static CMOS RMS (W)</div></td>
+    <td width="180"><div align="center">Dynamic CMOS Avg (W)</div></td>
+    <td width="185"><div align="center">Dynamic CMOS Max (W)</div></td>
+    <td width="161"><div align="center">State CMOS RMS (W)</div></td>
+  </tr>
+  <tr>
+    <td align="right"><div align="center">1.0</div></td>
+    <td align="right"><div align="center">2.62E-06</div></td>
+    <td align="right"><div align="center">1.23E-03</div></td>
+    <td align="right"><div align="center">3.25E-05</div></td>
+    <td align="right"><div align="center">5.94E-06</div></td>
+    <td align="right"><div align="center">1.50E-03</div></td>
+    <td align="right"><div align="center">6.48E-05</div></td>
+  </tr>
+  <tr>
+    <td align="right"><div align="center">0.8</div></td>
+    <td align="right"><div align="center">1.33E-06</div></td>
+    <td align="right"><div align="center">5.64E-04</div></td>
+    <td align="right"><div align="center">1.56E-05</div></td>
+    <td align="right"><div align="center">2.70E-06</div></td>
+    <td align="right"><div align="center">6.10E-04</div></td>
+    <td align="right"><div align="center">2.81E-05</div></td>
+  </tr>
+  <tr>
+    <td align="right"><div align="center">0.6</div></td>
+    <td align="right"><div align="center">6.89E-07</div></td>
+    <td align="right"><div align="center">2.57E-04</div></td>
+    <td align="right"><div align="center">7.33E-06</div></td>
+    <td align="right"><div align="center">1.34E-06</div></td>
+    <td align="right"><div align="center">2.97E-04</div></td>
+    <td align="right"><div align="center">1.24E-05</div></td>
+  </tr>
+  <tr>
+    <td align="right"><div align="center">0.4</div></td>
+    <td align="right"><div align="center">3.25E-07</div></td>
+    <td align="right"><div align="center">9.84E-05</div></td>
+    <td align="right"><div align="center">2.66E-06</div></td>
+    <td align="right"><div align="center">6.24E-07</div></td>
+    <td align="right"><div align="center">1.05E-04</div></td>
+    <td align="right"><div align="center">4.30E-06</div></td>
+  </tr>
+  <tr>
+    <td align="right"><div align="center">0.3</div></td>
+    <td align="right"><div align="center">1.85E-07</div></td>
+    <td align="right"><div align="center">2.50E-05</div></td>
+    <td align="right"><div align="center">9.82E-07</div></td>
+    <td align="right"><div align="center">3.69E-07</div></td>
+    <td align="right"><div align="center">4.27E-05</div></td>
+    <td align="right"><div align="center">1.80E-06</div></td>
+  </tr>
+  <tr>
+    <td align="right"><div align="center">0.2</div></td>
+    <td align="right"><div align="center">8.21E-08</div></td>
+    <td align="right"><div align="center">3.22E-06</div></td>
+    <td align="right"><div align="center">2.05E-07</div></td>
+    <td align="right"><div align="center">1.59E-07</div></td>
+    <td align="right"><div align="center">3.94E-06</div></td>
+    <td align="right"><div align="center">3.72E-07</div></td>
+  </tr>
+  <tr>
+    <td align="right"><div align="center">0.1</div></td>
+    <td align="right"><div align="center">1.19E-08</div></td>
+    <td align="right"><div align="center">2.06E-07</div></td>
+    <td align="right"><div align="center">1.78E-08</div></td>
+    <td align="right"><div align="center">1.78E-08</div></td>
+    <td align="right"><div align="center">1.98E-07</div></td>
+    <td align="right"><div align="center">2.29E-08</div></td>
+  </tr>
+</table>
+<p align="center"><img src="diagrams/Chart.jpg" width="954" height="657"></p>
+<p class="liberty_quote" align="center">Figure 25. Power Comparison </p>
+<p align="left">Here are the two circuits operating at below threshold:</p>
+<p align="center"><img src="plots/cmos-2V-vdd.jpg" width="1224" height="943"></p>
+<p class="liberty_quote" align="center">Figure 26. Static CMOS at .02V VDD </p>
+
+<p>&nbsp;</p>
+<p><img src="plots/dynamic-02v.jpg" width="1224" height="722">
+</p>
+<p class="liberty_quote" align="center">Figure 25. Dynamic CMOS at .02V VDD </p>
+<p align="left">&nbsp;</p>
+</div>
+</body>
+</html>

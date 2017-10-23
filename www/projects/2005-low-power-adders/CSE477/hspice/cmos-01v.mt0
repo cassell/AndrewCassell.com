@@ -1,0 +1,4 @@
+$DATA1 SOURCE='HSPICE' VERSION='02.2.1' 
+.TITLE '* hspice file created from cmos.ext - technology: mmi07'
+ avgpow maxpow rmspow temper alter#  
+  1.1950078e-08  2.0691761e-07  1.7885756e-08   25.00000000    1.00000000  

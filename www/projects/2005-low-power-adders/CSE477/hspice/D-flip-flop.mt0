@@ -1,0 +1,5 @@
+$DATA1 SOURCE='HSPICE' VERSION='02.2.1' 
+.TITLE '* hspice file created from d-flip-flop.ext - technology: mmi07'
+ avgpow maxpow rmspow lsub lgatea lgateb temper alter#  
+  6.1116850e-06  2.5687999e-03  7.1529511e-05 -8.7965784e-07 -3.2362535e-10  
+  2.5758262e-14   25.00000000    1.00000000  

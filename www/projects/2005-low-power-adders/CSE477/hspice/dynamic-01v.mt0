@@ -1,0 +1,4 @@
+$DATA1 SOURCE='HSPICE' VERSION='02.2.1' 
+.TITLE '* hspice file created from dynamic.ext - technology: mmi07'
+ avgpow maxpow rmspow temper alter#  
+  1.7867237e-08  1.9806981e-07  2.2968098e-08   25.00000000    1.00000000  

@@ -1,0 +1,8 @@
+$DATA1 SOURCE='HSPICE' VERSION='02.2.1' 
+.TITLE '* hspice file created from mirror-adder-cmos.ext - technology: mmi07'
+        avgpow        maxpow         rmspow          lsub           lgatea       lgateb       lgatecin     temper   alter#  
+  4.4655735e-06  8.9670156e-04  4.0239484e-05 -1.4377304e-07  2.6358459e-10  1.1132448e-09 -1.9874406e-09   25.0
+
+
+
+VDD = 1.0V

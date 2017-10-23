@@ -1,0 +1,5 @@
+$DATA1 SOURCE='HSPICE' VERSION='02.2.1' 
+.TITLE '* hspice file created from mirror-adder-dynamic.ext - technology: mmi0'
+ avgpow maxpow rmspow lsub lgatea lgateb lgatecin temper alter#  
+  5.9434322e-06  1.5077405e-03  6.4860216e-05 -8.1492951e-08 -5.0024923e-09  
+ -2.9819737e-09 -1.3971955e-08   25.00000000    1.00000000  
