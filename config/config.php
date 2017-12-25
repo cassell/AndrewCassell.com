@@ -1,6 +1,5 @@
 <?php
 
-// guarantees proper caching now that we have disabled Apache Sessions
 header('Server: AndrewCassell');
 header('X-Powered-By: AndrewCassell');
 header('Cache-Control: no-store, no-cache, must-revalidate, post-check=0, pre-check=0');

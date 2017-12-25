@@ -1,0 +1,17 @@
+{% extends 'layout/layout.html.twig' %}
+{% block content %}
+    <div class="container">
+        <div class="blog-container">
+            <h1>Blog, Presentations, and Articles</h1>
+            <p>All Talks: <a href="https://speakerdeck.com/cassell">Speaker Deck</a></p>
+            <hr>
+            <ul class="list-of-blog-articles-and-talks">
+                {% for article in entries %}
+                    <li><a href="{{ article.getUrl }}">{{ article.getTitle }}</a><br><small>{{ article.getDateFormatted("M j, Y") }}</small></li>
+                {% endfor %}
+            </ul>
+        </div>
+    </div>
+{% endblock %}
+
+

@@ -8,9 +8,10 @@ class HomePageController extends Controller
 {
     public function get(Response $response)
     {
-        $response->setContent($this->engine->render("/home/home",['title' => ""]));
-        return $response;
+        return $this->render($response,"/home/home.html.twig",['title' => ""]);
     }
+
+
 
 }
 

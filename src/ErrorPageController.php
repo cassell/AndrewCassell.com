@@ -6,10 +6,9 @@ use Symfony\Component\HttpFoundation\Response;
 
 class ErrorPageController extends Controller
 {
-    public function get(Request $request, Response $response)
+    public function get(Response $response)
     {
-        $response->setContent($this->engine->render("error/error",['title' => ""]));
-        return $response;
+        return $this->render($response,"error/error.html.twig",['title' => ""]);
     }
 
 }

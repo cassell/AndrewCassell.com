@@ -13,5 +13,5 @@ $container = require_once "../config/bootstrap_container.php";
 /** @var ErrorPageController $errorPage */
 $errorPage = $container->get(ErrorPageController::class);
 
-$errorPage->get($request,$response)->send();
+$errorPage->get($response)->send();
 

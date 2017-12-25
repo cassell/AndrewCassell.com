@@ -10,10 +10,10 @@
     "require": {
         "michelf/php-markdown": "^1.6",
         "league/route": "^1.2",
-        "league/plates": "^3.1"
+        "twig/twig": "^2.4"
     },
     "autoload": {
-        "psr-4": {"AndrewCassell\\": "classes/"}
+        "psr-4": {"AndrewCassell\\": "src/"}
     }
 	
 }

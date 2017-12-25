@@ -24,9 +24,7 @@ class BlogIndexController extends Controller
             return $a->getDate() < $b->getDate();
         });
 
-        $response->setContent($this->engine->render("/blog/index",['title' => "Blog", "entries" => $blog]));
-
-        return $response;
+        return $this->render($response,"/blog/index.html.twig",['title' => "Blog", "entries" => $blog]);
     }
 
 

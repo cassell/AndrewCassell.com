@@ -24,9 +24,8 @@ class BlogArticleController  extends Controller
 
         $contents = $markdown->transform($contents);
 
-        $response->setContent($this->engine->render("/blog/article",['title' => $article->getTitle(), "article" => $contents]));
+        return $this->render($response,"/blog/article.html.twig",['title' => $article->getTitle(), "article" => $contents]);
 
-        return $response;
 
     }
 }
