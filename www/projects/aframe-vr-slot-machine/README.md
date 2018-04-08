@@ -1,1 +1,0 @@
-# aframe-react-slot-machine
