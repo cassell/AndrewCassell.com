@@ -43,4 +43,4 @@ All in all, it was a great conference season. It was wonderful getting to see ev
 
 
 
-*Dec 15, 2018*
+*December 15, 2018*
